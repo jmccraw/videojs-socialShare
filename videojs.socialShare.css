@@ -1,0 +1,53 @@
+.vjs-social-share {
+  background: rgba(0, 0, 0, .7);
+  display: none;
+  height: 95%;
+  left: 0;
+  overflow: hidden;
+  padding: 20px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+}
+.vjs-social-share.is-active {
+  display: block;
+}
+.vjs-social-share-container {
+  -webkit-align-content: center;
+  align-content: center;
+  -webkit-align-items: baseline;
+  align-items: baseline;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+.vjs-social-share-header {
+  font: 700 16px/1 Arial, sans-serif;
+  margin: 0 auto 20px;
+  text-align: center;
+}
+.vjs-social-share-link {
+  font: 400 18px/1 Arial, sans-serif;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  position: relative;
+  width: 23%;
+}
+.vjs-social-share-link:nth-of-type(4n),
+.vjs-social-share-link:last-of-type {
+  margin-right: 0;
+}
+.vjs-social-share-img {
+  height: auto;
+  margin-bottom: 5px;
+  width: 100%;
+}
