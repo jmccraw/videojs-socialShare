@@ -5,7 +5,7 @@ ____
 ### Purpose
 Share your embeded video URL directly from the unit itself. This plugin adds a Facebook and Twitter (more possible) widget to your player to share the page URL without having to scroll to your page’s own share tools.
 
-![Suggested Social Share Screenshot](TKTK)
+![Suggested Social Share Screenshot](https://lh3.googleusercontent.com/-Lm8716TKNAI/Vo2K97wnD5I/AAAAAAAAGOs/xWGffoJrwYI/s800-Ic42/videojs-socialshare.png)
 
 ### Usage
 This plugin requires [Video.js](https://github.com/videojs/video.js) and was created with version 5.4.4.
@@ -33,19 +33,21 @@ Below is a sample use case. Feel free to add the videojs-socialShare CSS/JS to y
   
   var video = videojs('my-video');
   video.socialShare({
-    facebook: {
-      shareUrl: '', // optional 
-      shareImage: '',
+    facebook: { // optional, includes a Facebook share button (See the [Facebook documentation](https://developers.facebook.com/docs/sharing/reference/share-dialog) for more information)
+      shareUrl: '', // optional, defaults to window.location.href
+      shareImage: '', // optional, defaults to the Facebook-scraped image
       shareText: ''
     },
-    twitter: {
-      handle: '',
-      shareUrl: '',
-      shareText: ''
+    twitter: { // optional, includes a Twitter share button (See the [Twitter documentation](https://dev.twitter.com/web/tweet-button/web-intent) for more information)
+      handle: '', // optional, appends `via @handle` to the end of the tweet 
+      shareUrl: '', // optional, defaults to window.location.href
+      shareText: '' 
     }
   });
 </script>
 ```
 
 ### Notes
+For Facebook to work to the best of its ability, you need to have implemented the Facebook SDK or at least the og metadata, include the `fb:app_id`.
+
 Let me know if you run into any bugs or recommendations.
