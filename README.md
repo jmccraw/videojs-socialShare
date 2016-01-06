@@ -50,4 +50,6 @@ Below is a sample use case. Feel free to add the videojs-socialShare CSS/JS to y
 ### Notes
 For Facebook to work to the best of its ability, you need to have implemented the Facebook SDK or at least the og metadata, include the `fb:app_id`.
 
+You should also style this to work across viewports, since this is only a cursory example for desktop, although it'll probably work fine on smaller screens. It also doesn't have a fallback for mobile, for example, appearing under or over the video itself, since it appears on hover and mobile devices don't do that.
+
 Let me know if you run into any bugs or recommendations.
