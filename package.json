@@ -1,0 +1,24 @@
+{
+  "name": "videojs-socialshare",
+  "version": "1.0.0",
+  "description": "Video.js plugin to display a social share tool on hover.",
+  "main": "videojs.suggestedVideoEndcap.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jmccraw/videojs-socialShare.git"
+  },
+  "keywords": [
+    "videojs",
+    "endcap",
+    "videojs-plugin"
+  ],
+  "author": "Justin McCraw <jmccraw1+socialShare@gmail.com> (http://twitter.com/justinmccraw)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jmccraw/videojs-socialShare/issues"
+  },
+  "homepage": "https://github.com/jmccraw/videojs-socialShare#readme"
+}
