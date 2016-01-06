@@ -1,6 +1,6 @@
 {
   "name": "videojs-socialshare",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Video.js plugin to display a social share tool on hover.",
   "main": "videojs.suggestedVideoEndcap.js",
   "scripts": {
