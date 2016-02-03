@@ -84,6 +84,7 @@
       if (opts.twitter) {
         _button = document.createElement('a');
         _button.className = 'vjs-social-share-link';
+        _button.setAttribute('data-network', 'twitter');
         _button.innerHTML = twIcon;
         _button.addEventListener('click', launchTweet, false);
         _aside.appendChild(_button);
@@ -92,6 +93,7 @@
       if (opts.facebook) {
         _button = document.createElement('a');
         _button.className = 'vjs-social-share-link';
+        _button.setAttribute('data-network', 'facebook');
         _button.innerHTML = fbIcon;
         _button.addEventListener('click', launchFacebook, false);
         _aside.appendChild(_button);
@@ -118,7 +120,6 @@
         constructSocialShareContent();
       }
     });
-
 
   });
 }(window.videojs));
