@@ -119,6 +119,9 @@
       if (opts.facebook || opts.twitter) {
         constructSocialShareContent();
       }
+      if (opts.callback) {
+        opts.callback();
+      }
     });
 
   });
