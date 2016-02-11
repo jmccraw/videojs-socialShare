@@ -143,6 +143,7 @@
           case 'twitter':
             _button = document.createElement('a');
             _button.className = 'vjs-social-share-link';
+            _button.setAttribute('data-network', 'twitter');
             _button.innerHTML = twIcon;
             _button.addEventListener('click', launchTweet, false);
             _aside.appendChild(_button);
@@ -151,6 +152,7 @@
           case 'facebook':
             _button = document.createElement('a');
             _button.className = 'vjs-social-share-link';
+            _button.setAttribute('data-network', 'facebook');
             _button.innerHTML = fbIcon;
             _button.addEventListener('click', launchFacebook, false);
             _aside.appendChild(_button);
@@ -159,6 +161,7 @@
           case 'embed':
             _button = document.createElement('a');
             _button.className = 'vjs-social-share-link';
+            _button.setAttribute('data-network', 'embed');
             _button.innerHTML = embedIcon;
             _button.addEventListener('click', launchEmbed, false);
             _aside.appendChild(_button);
@@ -168,8 +171,16 @@
             if ((typeof opts[channel].iconsvg !== 'undefined')
                 && (typeof opts[channel].callback === 'function'))
             {
+                var network = 'custom';
+
+                if (typeof opts[channel].network !== 'undefined')
+                {
+                    network = opts[channel].network;
+                }
+
                 _button = document.createElement('a');
                 _button.className = 'vjs-social-share-link';
+                _button.setAttribute('data-network', network);
                 _button.innerHTML = opts[channel].iconsvg;
                 _button.addEventListener('click', function (e) { opts[channel].callback (e); }, false);
                 _aside.appendChild(_button);
@@ -196,7 +207,6 @@
     player.ready(function() {
       constructSocialShareContent();
     });
-
 
   });
 }(window.videojs));
