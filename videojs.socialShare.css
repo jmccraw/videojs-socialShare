@@ -1,19 +1,28 @@
 .vjs-social-share {
   height: 40px;
-  opacity: 0;
   position: absolute;
   right: 30px;
   text-align: center;
   top: 14px;
-  -webkit-transition: opacity .3s ease-in-out;
-  transition: opacity .3s ease-in-out;
+  transition: visibility 0.3s ease 0s, opacity 0.3s ease 0s;
   width: auto;
   z-index: 999;
-}
-.vjs-social-share.is-visible,
-.vjs-social-share:hover {
+  visibility: visible;
   opacity: 1;
 }
+
+.vjs-user-inactive .vjs-social-share {
+    visibility: hidden;
+    opacity: 0;
+}
+.vjs-user-inactive.vjs-paused .vjs-social-share {
+    visibility: visible;
+    opacity: 0;
+}
+.vjs-ad-playing .vjs-social-share {
+    display: none;
+}
+
 .vjs-social-share-link {
   border: none;
   cursor: pointer;
@@ -31,26 +40,32 @@
   width: 30px;
 }
 
-
-.vjs-user-inactive .vjs-user-inactive .embed-window {
-    -webkit-transition: visibility 1.5s, opacity 1.5s !important;
-    -moz-transition: visibility 1.5s, opacity 1.5s !important;
-    -ms-transition: visibility 1.5s, opacity 1.5s !important;
-    -o-transition: visibility 1.5s, opacity 1.5s !important;
-    transition: visibility 1.5s, opacity 1.5s !important;
-}
-
 .embed-window {
     position: absolute;
     top: 64px;
     left: 10%;
     width: 80%;
     color: black;
-    display: none;
     background: rgba(43, 51, 63, 1);
     padding: 10px;
     border-radius: 8px;
+    transition: visibility 0.3s ease 0s, opacity 0.3s ease 0s;
+    visibility: visible;
+    opacity: 1;
 }
+
+.vjs-user-inactive .embed-window {
+    visibility: hidden;
+    opacity: 0;
+}
+.vjs-user-inactive.vjs-paused .embed-window {
+    visibility: visible;
+    opacity: 0;
+}
+.vjs-ad-playing .embed-window {
+    display: none;
+}
+
 
 .embed-window .embed-window-title {
     font-size: 20px;

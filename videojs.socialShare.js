@@ -193,15 +193,6 @@
       player.el().appendChild(_frag);
     }
 
-    // attach VideoJS event handlers
-    player.on('mouseover', function() {
-      // on hover, fade in the social share tools
-      _ss.classList.add('is-visible');
-    }).on('mouseout', function() {
-      // when not hovering, fade share tools back out
-      _ss.classList.remove('is-visible');
-    });
-
     player.ready(function() {
       constructSocialShareContent();
     });
