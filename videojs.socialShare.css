@@ -17,7 +17,7 @@
 }
 .vjs-user-inactive.vjs-paused .vjs-social-share {
     visibility: visible;
-    opacity: 0;
+    opacity: 1;
 }
 .vjs-ad-playing .vjs-social-share {
     display: none;
@@ -60,7 +60,7 @@
 }
 .vjs-user-inactive.vjs-paused .embed-window {
     visibility: visible;
-    opacity: 0;
+    opacity: 1;
 }
 .vjs-ad-playing .embed-window {
     display: none;
