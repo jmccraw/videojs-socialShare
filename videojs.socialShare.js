@@ -80,7 +80,7 @@
       {
         _embed_window = document.createElement('div');
         _embed_window.className = 'embed-window';
-        _embed_window.innerHTML = '<input type="text" name="embed-code" class="mm-embed-code" readonly="readonly" onClick="this.setSelectionRange(0, this.value.length);">';
+        _embed_window.innerHTML = '<input type="text" name="embed-code" class="embed-code" readonly="readonly"><br /><button id="btn-copy">Copy</button>';
 
         var embed_close = document.createElement('div');
         embed_close.className = "embed-window-close";
@@ -95,6 +95,20 @@
         _embed_window.insertBefore(embed_title, _embed_window.firstChild);
 
         player.el().appendChild(_embed_window);
+
+        var el_btn = _embed_window.getElementsByTagName('button')[0];
+        el_btn.addEventListener('click', function(event) {
+          var el_input = _embed_window.getElementsByTagName('input')[0];
+          el_input.setSelectionRange (0, opts.embed.embedMarkup.length);
+
+          try {
+            document.execCommand('copy');
+          }
+          catch (err) {
+            console.log('unable to copy embed code to clipboard.');
+          }
+          _embed_window.style.display = 'none';
+        });
       }
 
       if (_embed_window.style.display === 'block')
@@ -103,6 +117,10 @@
       }
       else 
       {
+        var el_input = _embed_window.getElementsByTagName('input')[0];
+        el_input.value = opts.embed.embedMarkup;
+        el_input.setSelectionRange (0, opts.embed.embedMarkup.length);
+
         _embed_window.getElementsByTagName('input')[0].value = opts.embed.embedMarkup;
         _embed_window.style.display = 'block';
       }

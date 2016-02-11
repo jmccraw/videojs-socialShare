@@ -80,3 +80,21 @@
     margin-bottom: 5px;
     cursor: pointer;
 }
+
+.embed-window button#btn-copy {
+    background-color: #3B4554;
+    border: 1px solid #808080;
+    color: white;
+    float: right;
+    margin: 8px 0;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;    
+}
+
+.embed-window button#btn-copy:active {
+    background-color: #808080;
+    color: #3B4554;
+}
