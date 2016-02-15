@@ -36,7 +36,10 @@ Below is a sample use case. Feel free to add the videojs-socialShare CSS/JS to y
     facebook: { // optional, includes a Facebook share button (See the [Facebook documentation](https://developers.facebook.com/docs/sharing/reference/share-dialog) for more information)
       shareUrl: '', // optional, defaults to window.location.href
       shareImage: '', // optional, defaults to the Facebook-scraped image
-      shareText: ''
+      shareText: '',  // optional
+      app_id: '', // optional, facebook app_id to use (if not specified, the plugin will try to 
+                  // use an existing FB Javascript object, or it will try to scrape the app_id from the 
+                  // <meta property="fb:app_id"> element in the document
     },
     twitter: { // optional, includes a Twitter share button (See the [Twitter documentation](https://dev.twitter.com/web/tweet-button/web-intent) for more information)
       handle: '', // optional, appends `via @handle` to the end of the tweet 

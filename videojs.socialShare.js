@@ -41,6 +41,12 @@
     function launchFacebook(e) {
       e.preventDefault();
       var url = opts.facebook.shareUrl ? opts.facebook.shareUrl : window.location.href;
+      var fb_app_id = opts.facebook.app_id ? opts.facebook.app_id : '';
+      if (fb_app_id == '') {
+            if (!!document.querySelector('meta[property="fb:app_id"]')) {
+                fb_app_id = document.querySelector('meta[property="fb:app_id"]').content;
+            }
+      }
 
       if (typeof FB !== 'undefined') {
         // assumes you have the proper og metadata filled out for your site
@@ -53,11 +59,11 @@
           description: opts.facebook.shareText ? opts.facebook.shareText : ''
         }, function (response) {
         });
-      } else if (!!document.querySelector('meta[property="fb:app_id"]')) {
+      } else if (fb_app_id !== '') {
         // since the FB object doesn't exist, try to scrape the page for og information and use a new window URL method
         window.open(
           'https://www.facebook.com/dialog/share' +
-            '?app_id=' + document.querySelector('meta[property="fb:app_id"]').content +
+            '?app_id=' + fb_app_id +
             '&display=popup' +
             '&href=' + encodeURIComponent(url) +
             '&redirect_uri=' + encodeURIComponent(url),
