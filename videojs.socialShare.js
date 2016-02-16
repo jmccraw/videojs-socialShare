@@ -105,14 +105,41 @@
         var el_btn = _embed_window.getElementsByTagName('button')[0];
         el_btn.addEventListener('click', function(event) {
           var el_input = _embed_window.getElementsByTagName('input')[0];
+          el_input.focus ();
           el_input.setSelectionRange (0, opts.embed.embedMarkup.length);
 
+          /*
+          var selectedText = ""
+          selectedText = el_input.value.substring(el_input.selectionStart, el_input.selectionEnd);
+          console.log ("selected from " + el_input.selectionStart + " to " + el_input.selectionEnd + ": " + selectedText);
+          */
+
+          var result = false;
           try {
-            document.execCommand('copy');
+            result = document.queryCommandSupported('copy');
+            if (result)
+            {
+                console.log ("copy is supported");
+            }
+            else
+            {
+                console.log ("copy is not supported");
+            }
+            result = document.execCommand('copy');
           }
           catch (err) {
+            result = false;
+          }
+
+          if (result)
+          {
+            console.log('copied embed code to clipboard.');
+          }
+          else
+          {
             console.log('unable to copy embed code to clipboard.');
           }
+
           _embed_window.style.display = 'none';
         });
       }
