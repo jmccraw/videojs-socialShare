@@ -21,12 +21,16 @@
      */
     function launchTweet(e) {
       e.preventDefault();
+      var twitter_url = 'http://twitter.com/intent/tweet' +
+                        '?text=' + encodeURIComponent(opts.twitter.shareText ? opts.twitter.shareText : '') +
+                        '&url=' + encodeURIComponent(opts.twitter.shareUrl ? opts.twitter.shareUrl : window.location.href)
+ 
+      if (opts.twitter.handle != '' && opts.twitter.handle != undefined) {
+        twitter_url += '&via=' + opts.twitter.handle
+      }
 
       window.open(
-        'http://twitter.com/intent/tweet' +
-          '?text=' + encodeURIComponent(opts.twitter.shareText ? opts.twitter.shareText : '') +
-          '&url=' + encodeURIComponent(opts.twitter.shareUrl ? opts.twitter.shareUrl : window.location.href) +
-          '&via=' + (opts.twitter.handle ? opts.twitter.handle : ''),
+        twitter_url,
         'Share This Video to Twitter',
         'width=600,height=300,left=' + Math.ceil((window.innerWidth / 2) - 300) + ',top=' +
           Math.ceil((window.innerHeight / 2) - 127)
@@ -109,10 +113,14 @@
     // attach VideoJS event handlers
     player.on('mouseover', function() {
       // on hover, fade in the social share tools
-      _ss.classList.add('is-visible');
+      if (_ss != undefined) {
+          _ss.classList.add('is-visible');
+      }
     }).on('mouseout', function() {
       // when not hovering, fade share tools back out
-      _ss.classList.remove('is-visible');
+      if (_ss != undefined) {
+          _ss.classList.remove('is-visible');
+      }
     });
 
     player.ready(function() {
