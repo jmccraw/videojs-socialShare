@@ -1,5 +1,5 @@
 # videojs-socialShare
-Adds social sharing buttons to the video widget for Facebook and Twitter.
+Adds social sharing buttons to the video widget for Facebook, Twitter, and your own generic embed code.
 ____
 
 ### Purpose
@@ -8,7 +8,7 @@ Share your embeded video URL directly from the unit itself. This plugin adds a F
 ![Suggested Social Share Screenshot](https://lh3.googleusercontent.com/-Lm8716TKNAI/Vo2K97wnD5I/AAAAAAAAGOs/xWGffoJrwYI/s800-Ic42/videojs-socialshare.png)
 
 ### Usage
-This plugin requires [Video.js](https://github.com/videojs/video.js) and was created with version 5.4.4.
+This plugin requires [Video.js](https://github.com/videojs/video.js) and was created with version 7.2.
 
 It also uses [flexbox](http://caniuse.com/flexbox).
 
