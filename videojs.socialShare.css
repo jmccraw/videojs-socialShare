@@ -1,19 +1,29 @@
 .vjs-social-share {
   height: 40px;
-  opacity: 0;
+  opacity: 1;
   position: absolute;
   right: 30px;
   text-align: center;
   top: 14px;
-  -webkit-transition: opacity .3s ease-in-out;
-  transition: opacity .3s ease-in-out;
+  transition: visibility 0.3s ease,
+    opacity 0.3s ease;
+  visibility: visible;
   width: auto;
   z-index: 999;
 }
-.vjs-social-share.is-visible,
-.vjs-social-share:hover {
-  opacity: 1;
+
+.vjs-user-inactive .vjs-social-share {
+  opacity: 0;
+  visibility: hidden;
 }
+.vjs-user-inactive.vjs-paused .vjs-social-share {
+  opacity: 1;
+  visibility: visible;
+}
+.vjs-ad-playing .vjs-social-share {
+  display: none;
+}
+
 .vjs-social-share-link {
   border: none;
   cursor: pointer;
@@ -29,4 +39,78 @@
 .vjs-social-share-svg {
   height: 30px;
   width: 30px;
+}
+
+.embed-window {
+  background-color: rgb(43, 51, 63);
+  border-radius: 8px;
+  color: #000;
+  left: 10%;
+  opacity: 1;
+  padding: 10px;
+  position: absolute;
+  top: 64px;
+  width: 80%;
+  transition: visibility 0.3s ease,
+    opacity 0.3s ease;
+  visibility: visible;
+}
+
+.vjs-user-inactive .embed-window {
+  opacity: 0;
+  visibility: hidden;
+}
+.vjs-user-inactive.vjs-paused .embed-window {
+  opacity: 1;
+  visibility: visible;
+}
+.vjs-ad-playing .embed-window {
+  display: none;
+}
+
+.embed-window .embed-window-title {
+  color: #fff;
+  display: inline-block;
+  font-size: 20px;
+  margin-left: 1px;
+  margin-top: 6px;
+}
+
+.embed-window input {
+  background-color: rgba(43, 51, 63, 0);
+  border: 1px solid gray;
+  color: #fff;
+  font-size: 14px;
+  margin-bottom: 0;
+  padding: 6px 10px;
+  width: 100%;
+}
+
+.embed-window .embed-window-close {
+  background-color: rgba(43, 51, 63, 0);
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  font-size: 1.5em;
+  margin-bottom: 5px;
+  padding: 3px;
+}
+
+.embed-window button#btn-copy {
+  background-color: #3b4554;
+  border: 1px solid #808080;
+  color: #fff;
+  display: inline-block;
+  float: right;
+  font-size: 16px;
+  margin: 8px 0;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.embed-window button#btn-copy:active {
+  background-color: #808080;
+  color: #3b4554;
 }
