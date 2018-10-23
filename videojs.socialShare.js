@@ -25,7 +25,7 @@
                         '?text=' + encodeURIComponent(opts.twitter.shareText ? opts.twitter.shareText : '') +
                         '&url=' + encodeURIComponent(opts.twitter.shareUrl ? opts.twitter.shareUrl : window.location.href)
  
-      if (opts.twitter.handle != '' && opts.twitter.handle != undefined) {
+      if (opts.twitter.handle !== '' && typeof opts.twitter.handle !== 'undefined') {
         twitter_url += '&via=' + opts.twitter.handle
       }
 
@@ -113,12 +113,14 @@
     // attach VideoJS event handlers
     player.on('mouseover', function() {
       // on hover, fade in the social share tools
-      if (_ss != undefined) {
+      if (typeof _ss !== 'undefined') {
           _ss.classList.add('is-visible');
       }
-    }).on('mouseout', function() {
+    });
+
+    player.on('mouseout', function() {
       // when not hovering, fade share tools back out
-      if (_ss != undefined) {
+      if (typeof _ss !== 'undefined') {
           _ss.classList.remove('is-visible');
       }
     });
