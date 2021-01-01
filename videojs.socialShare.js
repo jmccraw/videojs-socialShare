@@ -8,7 +8,7 @@
 (function(videojs) {
   'use strict';
 
-  videojs.plugin('socialShare', function(opts) {
+  videojs.registerPlugin('socialShare', function(opts) {
     opts = opts || {};
     var player = this;
     var _ss;
@@ -238,7 +238,7 @@
     });
 
     player.ready(function() {
-      if (opts.facebook || opts.twitter) {
+      if (opts.facebook || opts.twitter || opts.embed) {
         constructSocialShareContent();
       }
     });
